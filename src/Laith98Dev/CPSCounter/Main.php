@@ -15,8 +15,6 @@ use pocketmine\network\mcpe\protocol\types\inventory\UseItemOnEntityTransactionD
 use pocketmine\network\mcpe\protocol\types\LevelSoundEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\ClosureTask;
-use function var_dump;
-use const PHP_EOL;
 
 class Main extends PluginBase implements Listener
 {
@@ -69,7 +67,6 @@ class Main extends PluginBase implements Listener
 			$session->update();
 
 			if($session->getCPS() >= ConfigHolder::getLimit()){
-				var_dump(ConfigHolder::getLimitAction());
 				switch (ConfigHolder::getLimitAction()){
 					case ConfigHolder::KEY_KICK_ACTION:
 						Main::getInstance()->getScheduler()->scheduleDelayedTask(
@@ -80,7 +77,6 @@ class Main extends PluginBase implements Listener
 						);
 						break;
 					case ConfigHolder::KEY_CANCEL_ACTION:
-						echo "Cancelled" . PHP_EOL;
 						$event->cancel();
 						break;
 				}
