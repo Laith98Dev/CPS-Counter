@@ -1,0 +1,17 @@
+# CPS Counter
+
+# When the CPS reaches a certain threshold, the player will experience a consequential action
+cps-limit: 25
+
+# Here is the specified action that will occur when the limit is reached. you can use
+# "kick" -> kicks the player with a custom kick message
+# "cancel" -> cancels the clicks of the player when the CPS limit is reached
+cps-limit-action: "kick"
+
+# The kick message
+cps-limit-kick-message: "§cYou were kicked because you exceeded the CPS limit"
+
+# This is the popup message shown to the player
+# {player} -> displays the player's name
+# {cps} -> shows the current CPS
+cps-popup-message: "§eYour CPS: §f{cps}"
